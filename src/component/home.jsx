@@ -1,17 +1,27 @@
 import React, {Component} from 'react';
 import Profile from "./profile";
 import '../css/home.css';
+import {Link} from "react-router-dom";
+import {Button} from "@material-ui/core";
 class Home extends Component {
     constructor(props)
     {
-        super(props);
-        console.log(props);
+         super(props);
         this.state={
-            name:props.name,
-            number:props.number
+            userPrimary:true
         }
 
     }
+
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        this.setState({
+            name:nextProps.name,
+            number:nextProps.number,
+
+        })
+    }
+
     changeName=()=>{
         this.setState({
             name:'This is name'
@@ -20,15 +30,24 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <div className="test">{this.state.name}</div>
-                <div className="test">{this.props.name}</div>
-                <div className="test">{this.state.number}</div>
-            <div style={{background:'#2ba02b',
-                paddingTop:20}}>
-                Home
-                <Profile/>
-                <button onClick={this.changeName}>Change</button>
-            </div>
+                <Button variant="contained" color={this.state.userPrimary?"primary":"secondary"} onClick={()=>this.setState({
+                    userPrimary:!this.state. userPrimary
+                })}>
+                    Primary
+                </Button>
+                This is Hiome Route{this.state.name}
+                {/*<div className="test">{this.state.name}</div>*/}
+                {/*<div className="test">{this.state.number}</div>*/}
+                {/*<div className="test">{this.props.name}</div>*/}
+                {/*<div className="test">{this.state.number}</div>*/}
+            {/*<div style={{background:'#2ba02b',*/}
+                {/*paddingTop:20}}>*/}
+                {/*Home*/}
+                {/*<Profile/>*/}
+                {/*<button onClick={this.changeName}>Change</button>*/}
+            {/*</div>*/}
+
+                <Link to={'/profile'}>GO to profile</Link>
             </div>
         );
     }

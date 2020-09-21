@@ -13,8 +13,14 @@ class StateExample extends Component {
     changeValue=()=>{
         this.setState({
             firstState:'OK I got it',
+            secondState:'ok second value'
         })
     };
+    componentDidMount() {
+        console.log('this is component did mount');
+
+    }
+
     render() {
 
         return (

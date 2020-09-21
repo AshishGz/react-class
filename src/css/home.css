@@ -4,3 +4,12 @@
     color: blue;
 
 }
+.drawer{
+    display: none !important;
+}
+@media only screen and (max-width: 600px) {
+    .drawer{
+        display: block !important;
+    }
+}
+
