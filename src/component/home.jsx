@@ -3,12 +3,14 @@ import Profile from "./profile";
 import '../css/home.css';
 import {Link} from "react-router-dom";
 import {Button} from "@material-ui/core";
+import StateExample from "./stateExample";
 class Home extends Component {
     constructor(props)
     {
          super(props);
         this.state={
-            userPrimary:true
+            userPrimary:true,
+            name:'ram'
         }
 
     }
@@ -31,7 +33,7 @@ class Home extends Component {
         return (
             <div>
                 <Button variant="contained" color={this.state.userPrimary?"primary":"secondary"} onClick={()=>this.setState({
-                    userPrimary:!this.state. userPrimary
+                    userPrimary:!this.state. userPrimary,name:'ashihs'
                 })}>
                     Primary
                 </Button>
@@ -46,6 +48,7 @@ class Home extends Component {
                 {/*<Profile/>*/}
                 {/*<button onClick={this.changeName}>Change</button>*/}
             {/*</div>*/}
+                <StateExample use={this.state.name}/>
 
                 <Link to={'/profile'}>GO to profile</Link>
             </div>

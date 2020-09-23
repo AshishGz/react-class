@@ -6,6 +6,7 @@ class StateExample extends Component {
         this.state={
             firstState:'This is my first State',
             secondState:'This is my Second State',
+            use:props.use
         };
        // this.changeValue=this.changeValue().bind(this);
     }
@@ -20,6 +21,23 @@ class StateExample extends Component {
         console.log('this is component did mount');
 
     }
+    componentDidUpdate(prevProps, prevState) {
+        console.log(prevState);
+        console.log(prevProps);
+        if (prevState.use !== this.state.use) {
+            this.setState({use:prevState.use});
+        }
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState){
+        console.log(nextProps);
+        if(nextProps.use!==prevState.use){
+console.log('jkjk');
+            return {path : nextProps.use};
+        }
+        else return null;
+    }
+
 
     render() {
 
@@ -27,6 +45,7 @@ class StateExample extends Component {
             <div>
                 {this.state.firstState}
                 {this.state.secondState}
+                {this.state.use}
                 <button onClick={this.changeValue}>Chnage State</button>
             </div>
         );

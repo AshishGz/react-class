@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import Home from "./component/home";
 import Profile from "./component/profile";
+import ContactForm from "./component/form/contactForm";
+import ViewContactList from "./component/form/viewContactList";
 
 
 class RoutePage extends Component {
@@ -20,6 +22,12 @@ class RoutePage extends Component {
                             </Route>
                             <Route path="/profile/:id" exact>
                                 <Profile />
+                            </Route>
+                            <Route path="/contact" exact>
+                                <ContactForm />
+                            </Route>
+                            <Route path="/contacts" exact>
+                                <ViewContactList />
                             </Route>
                         </Switch>
 

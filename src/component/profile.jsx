@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import StateExample from "./stateExample";
 
 export  default class Profile extends Component {
     constructor(props) {
@@ -13,6 +14,7 @@ export  default class Profile extends Component {
             <div>
                 {i==0?'Ashish':'Gautam'}
                 {abbc}
+
 
             </div>
         );
