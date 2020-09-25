@@ -20,6 +20,7 @@ class CovidData extends Component {
 
         })
     }
+  
 
     render() {
         return (

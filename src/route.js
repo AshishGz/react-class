@@ -10,6 +10,7 @@ import Profile from "./component/profile";
 import ContactForm from "./component/form/contactForm";
 import ViewContactList from "./component/form/viewContactList";
 import CovidData from "./component/api-call/covidData";
+import News from "./component/news/news";
 
 
 class RoutePage extends Component {
@@ -32,6 +33,9 @@ class RoutePage extends Component {
                             </Route>
                             <Route path="/covid" exact>
                                 <CovidData />
+                            </Route>
+                            <Route path="/news" exact>
+                                <News />
                             </Route>
                         </Switch>
 

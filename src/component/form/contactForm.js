@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import TextField from "@material-ui/core/TextField/TextField";
 import Button from "@material-ui/core/Button/Button";
-
+import axios from 'axios';
 
 
 //
@@ -34,11 +34,23 @@ class ContactForm extends Component {
             name:this.state.name,
             email:this.state.email,
             phone:this.state.phone,
-            feedback:this.state.feedback,
+            message:this.state.feedback,
         };
+
+       // window.open('mailto:test@example.com?subject=subject&body='+JSON.stringify(feedback));
+        // axios.post('https://script.google.com/macros/s/1QU-YdVD-PUS1yj0kwZwPy4DjuniNsqdPE-OB5xg-WhU/exec', feedback)
+        //     .then(function (response) {
+        //         console.log(response);
+        //     })
+        //     .catch(function (error) {
+        //         console.log(error);
+        //     });
+
 
         list.push(feedback);
         localStorage.setItem('_feedback',JSON.stringify(list));
+
+
     };
     render() {
 
