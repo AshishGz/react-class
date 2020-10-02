@@ -11,6 +11,8 @@ import ContactForm from "./component/form/contactForm";
 import ViewContactList from "./component/form/viewContactList";
 import CovidData from "./component/api-call/covidData";
 import News from "./component/news/news";
+import ExampleSetSate from "./react-hook/react-set-state";
+import APICallExample from "./react-hook/API-call-one";
 
 
 class RoutePage extends Component {
@@ -36,6 +38,12 @@ class RoutePage extends Component {
                             </Route>
                             <Route path="/news" exact>
                                 <News />
+                            </Route>
+                            <Route path="/reactUseState" exact>
+                                <ExampleSetSate />
+                            </Route>
+                            <Route path="/api-call" exact>
+                                <APICallExample />
                             </Route>
                         </Switch>
 
